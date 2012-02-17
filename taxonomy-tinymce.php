@@ -1,11 +1,11 @@
 <?php
 /*
 Plugin Name: Taxonomy TinyMCE
-Plugin URI: http://www.jaimemartinez.nl
+Plugin URI: 
 Description: Replaces the description textarea with the TinyMCE WYSIWYG.
 Version: 1.0
-Author: Jaime Martinez
-Author URI: http://www.jaimemartinez.nl 
+Author: Kevin Heath, Jaime Martinez
+Author URI: 
 License: GPL
 */
 /*  
@@ -21,6 +21,10 @@ License: GPL
     You should have received a copy of the GNU General Public License
     along with this program; if not, write to the Free Software
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+*/
+/*
+Kevin Heath - http://ypraise.com/
+Jaime Martinez - http://www.jaimemartinez.nl
 */
 
 remove_filter( 'pre_term_description', 'wp_filter_kses' );
