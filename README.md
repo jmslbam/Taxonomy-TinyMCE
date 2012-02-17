@@ -1,11 +1,11 @@
 ﻿Taxonomy TinyMCE
 =============
 
-Contributors: ypraise, jmslbam
-Tags: taxonomy description, category description, tinyMCE, wp_editor, taxonomy, category
-Requires at least: 3.3
-Tested up to: 3.3
-Stable tag: 1.0
+Contributors: ypraise, jmslbam 
+Tags: taxonomy description, category description, tinyMCE, wp_editor, taxonomy, category 
+Requires at least: 3.3 
+Tested up to: 3.3 
+Stable tag: 1.0 
 
 This plugins replaces the the description textarea with the TinyMCE WYSIWYG.
 
@@ -36,7 +36,7 @@ This plugins replaces the description textarea with the TinyMCE WYSIWYG.
 
 ### Why not use Category TincyMCE
 
-I want to, but had to make to much changes to still call it CategoryTinyMCE. Hope we can combine powers.
+I want to, but had to make to much changes to still call it CategoryTinyMCE. Hope we can combine powers. 
 Also a category is buildin [custom taxonomy](http://codex.wordpress.org/Taxonomies).
 
 ## Changelog
