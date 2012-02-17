@@ -1,4 +1,5 @@
-﻿# Taxonomy TinyMCE #
+﻿Taxonomy TinyMCE
+=============
 
 Contributors: ypraise, jmslbam
 Tags: taxonomy description, category description, tinyMCE, wp_editor, taxonomy, category
