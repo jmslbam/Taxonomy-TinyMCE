@@ -9,7 +9,6 @@ Stable tag: 1.0
 This plugins replaces the the description textarea with the TinyMCE WYSIWYG.
 
 ## Description
----------------------
 
 This plugins replaces the description textarea with the TinyMCE WYSIWYG.
 
