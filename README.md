@@ -3,8 +3,8 @@ Taxonomy TinyMCE for WordPress
 
 **Contributors**:
 
-* Jaime Martinez ( [@jmslbam](http://twitter.com/norcross ) / [jaimemartinez.nl](http://www.jaimemartinez.nl/) )
-* Kevin Heath of ypraise ( [@billerickson](http://twitter.com/billerickson ) / [billerickson.net](http://billerickson.net/) )
+* Jaime Martinez ( [@jmslbam](http://twitter.com/jmslbam ) / [jaimemartinez.nl](http://www.jaimemartinez.nl/) )
+* Kevin Heath of ypraise [ypraise.com/](http://ypraise.com/2012/01/wordpress-plugin-categorytinymce/) )
 
 
 Notes
@@ -16,9 +16,9 @@ Notes
 
 Install plugin 
 ---------------------
-1 Upload Taxonomy-TinyMCE folder to the /wp-content/plugins/ directory
-2 Activate the plugin through the 'Plugins' menu in WordPress
-3 Go to your custom taxonomy edit pages and start to write!
+1. Upload Taxonomy-TinyMCE folder to the /wp-content/plugins/ directory
+2. Activate the plugin through the 'Plugins' menu in WordPress
+3. Go to your custom taxonomy edit pages and start to write!
 
 
 To Do 
