@@ -33,16 +33,13 @@ This plugins replaces the description textarea with the TinyMCE WYSIWYG.
 3. Go to your custom taxonomy edit pages and start to write!
 
 ## Frequently Asked Questions
----------------------
 
 ### Why not use Category TincyMCE
----------------------
 
 I want to, but had to make to much changes to still call it CategoryTinyMCE. Hope we can combine powers.
 Also a category is buildin [custom taxonomy](http://codex.wordpress.org/Taxonomies).
 
 ## Changelog
----------------------
 
 = 1.0 =
 * Migrated from Category TinyMCE to Taxonomy TinyMCE
