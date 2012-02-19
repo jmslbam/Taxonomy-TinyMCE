@@ -3,7 +3,7 @@
 
 ## Description
 
-This plugins replaces the description textarea with the TinyMCE WYSIWYG.
+This Wordpress plugin replaces the description textarea with the build in TinyMCE WYSIWYG.
 
 **Contributors**:
 
