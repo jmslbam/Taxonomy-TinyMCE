@@ -3,7 +3,7 @@
 
 ## Description
 
-This Wordpress plugin replaces the description textarea with the build in TinyMCE WYSIWYG.
+This Wordpress plugin replaces a taxonomy term description textarea with the buildin TinyMCE WYSIWYG.  
 
 **Contributors**:
 

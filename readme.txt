@@ -5,11 +5,11 @@ Requires at least: 3.3
 Tested up to: 3.3
 Stable tag: 1.0
 
-This plugin replaces the description textarea with the build in TinyMCE WYSIWYG.  
+This plugin replaces a taxonomy term description textarea with the buildin TinyMCE WYSIWYG.  
 
 == Description ==
 
-This plugin replaces the description textarea with the build in TinyMCE WYSIWYG.  
+This plugin replaces a taxonomy term description textarea with the buildin TinyMCE WYSIWYG.  
 
 **Contributors**:
 
