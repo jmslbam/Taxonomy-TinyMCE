@@ -41,7 +41,8 @@ Also a category is build in [custom taxonomy](http://codex.wordpress.org/Taxonom
 * Migrated from Category TinyMCE to Taxonomy TinyMCE
 
 ## To Do
-- Show tiny_mce on overview page 'edit-tag' page, but it needs some change in the core or Wordpress.
+- Check for minimal Wordpress version 3.3.
+- Show tiny_mce on overview page 'edit-tag', but it needs some change in the core or Wordpress.
 inline-edit-tags.js needs to have .live() to work with TinyMCE.
 I was thinking about so submiting a request to add this, but I first have to learn my way in to WP svn / ideas / trac etc. Any help?
 - Implement options page.
