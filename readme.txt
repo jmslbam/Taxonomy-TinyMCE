@@ -9,9 +9,11 @@ This plugins replaces the the description textarea with the TinyMCE WYSIWYG.
 
 == Description ==
 
+This plugins replaces the the description textarea with the TinyMCE WYSIWYG.  
+
 **Contributors**:
 
-* Jaime Martinez ( [@jmslbam](http://twitter.com/jmslbam ) / [jaimemartinez.nl](http://www.jaimemartinez.nl/) )
+* Jaime Martinez ( [@jmslbam](http://twitter.com/jmslbam ) / [jaimemartinez.nl](http://www.jaimemartinez.nl/) )  
 
 === Notes === 
 - This plugin needs at least WordPress 3.3 to work as it uses the new wp_editor call introduced in WP 3.3.
