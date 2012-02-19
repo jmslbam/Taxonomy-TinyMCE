@@ -1,14 +1,15 @@
 <?php
 /*
 Plugin Name: Taxonomy TinyMCE
-Plugin URI: 
+Plugin URI: http://www.jaimemartinez.nl/taxonomy-tinymce
 Description: Replaces the description textarea with the TinyMCE WYSIWYG.
 Version: 1.0
-Author: Kevin Heath, Jaime Martinez
-Author URI: 
-License: GPL
+Author: Jaime Martinez
+Author URI: http://www.jaimemartinez.nl
+License: GPLv2
 */
-/*  
+/*  Copyright 2012  Jaime Martinez (email : jmslbam@gmail.com)
+
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License, version 2, as 
     published by the Free Software Foundation.
@@ -21,10 +22,6 @@ License: GPL
     You should have received a copy of the GNU General Public License
     along with this program; if not, write to the Free Software
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
-*/
-/*
-Kevin Heath - http://ypraise.com/
-Jaime Martinez - http://www.jaimemartinez.nl
 */
 
 remove_filter( 'pre_term_description', 'wp_filter_kses' );
@@ -42,15 +39,11 @@ function taxonomy_tinycme_admin_head() { ?>
  * Start replacing the description textarea on the edit detail page of a taxonomy (custom or 'category').
  * */
 
-//Why use an option: http://wordpress.stackexchange.com/questions/6549/any-examples-of-adding-custom-fields-to-the-category-editor
-define('taxonomy_description_tinymce_fields', 'taxonomy_description_tinymce_option');
 $show_description_column = TRUE;
 
 add_filter('edit_tag_form_fields', 'taxonomy_tinycme_add_wp_editor_term');
 add_filter('edit_category_form_fields', 'taxonomy_tinycme_add_wp_editor_term');
-function taxonomy_tinycme_add_wp_editor_term($tag) { 
-	$tag_tinymce = get_option(taxonomy_description_tinymce_fields);
-	?>
+function taxonomy_tinycme_add_wp_editor_term($tag) { ?>
 	<tr class="form-field">
 		<th scope="row" valign="top"><label for="description"><?php _ex('Description', 'Taxonomy Description'); ?></label></th>
 		<td>
@@ -100,19 +93,3 @@ function manage_my_taxonomy_columns($columns)
 }
 add_filter('manage_edit-post_tag_columns','manage_my_taxonomy_columns');
 add_filter('manage_edit-category_columns','manage_my_taxonomy_columns');
-
-/* 
- * This is from te original CategoryTinyMCE plugin
- * Yet need to figure out what it does but I did refactored it :)
- *  */
-
-// when a category is removed delete the new box
-add_filter('deleted_term_taxonomy', 'remove_taxonomy_extras');
-function remove_taxonomy_extras($term_id) {
-	if(isset($_POST['taxonomy'])):
-		$tag_extra_fields = get_option(taxonomy_description_tinymce_fields);
-		unset($tag_extra_fields[$term_id]);
-		update_option(taxonomy_description_tinymce_fields, $tag_extra_fields);
-	endif;
-}
-?>
