@@ -1,8 +1,8 @@
 === Taxonomy TinyMCE ===
-Contributors: ypraise, jmslbam
+Contributors: jmslbam, hoppinger
 Tags: taxonomy description, category description, tinyMCE, wp_editor, taxonomy, category
 Requires at least: 3.3
-Tested up to: 3.3
+Tested up to: 3.3.1
 Stable tag: 1.0
 
 This plugin replaces a taxonomy term description textarea with the buildin TinyMCE WYSIWYG.  
