@@ -41,9 +41,15 @@ function taxonomy_tinycme_admin_head() { ?>
 
 $show_description_column = TRUE;
 
-add_filter('edit_tag_form_fields', 'taxonomy_tinycme_add_wp_editor_term');
-add_filter('edit_category_form_fields', 'taxonomy_tinycme_add_wp_editor_term');
-function taxonomy_tinycme_add_wp_editor_term($tag) { ?>
+
+add_action('init', function(){
+	$taxonomies = get_taxonomies();
+	foreach($taxonomies as $tax){
+		add_filter($tax . '_edit_form_fields', 'taxonomy_tinycme_add_wp_editor_term');
+	}
+});
+
+function taxonomy_tinycme_add_wp_editor_term($term) { ?>
 	<tr class="form-field">
 		<th scope="row" valign="top"><label for="description"><?php _ex('Description', 'Taxonomy Description'); ?></label></th>
 		<td>
@@ -55,7 +61,7 @@ function taxonomy_tinycme_add_wp_editor_term($tag) { ?>
 					'textarea_rows' => '15', 
 					'textarea_name' => 'description' 
 				);	
-				wp_editor(html_entity_decode($tag->description ), 'description2', $settings); ?>	
+				wp_editor(html_entity_decode($term->description ), 'description2', $settings); ?>	
 		</td>	
 	</tr> <?php
 }
