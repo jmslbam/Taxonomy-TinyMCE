@@ -3,12 +3,12 @@
 Plugin Name: Taxonomy TinyMCE
 Plugin URI: http://www.jaimemartinez.nl/taxonomy-tinymce
 Description: Replaces the description textarea with the TinyMCE WYSIWYG.
-Version: 1.0
-Author: Jaime Martinez
+Version: 2.0
+Author: Jaime Martínez
 Author URI: http://www.jaimemartinez.nl
-License: GPLv2
+License: GPL version 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 */
-/*  Copyright 2012  Jaime Martinez (email : jmslbam@gmail.com)
+/*  Copyright 2012  Jaime Martínez (email : jmslbam@gmail.com)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License, version 2, as 
@@ -24,72 +24,29 @@ License: GPLv2
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-remove_filter( 'pre_term_description', 'wp_filter_kses' );
-remove_filter( 'term_description', 'wp_kses_data' );
-	
-// add extra css to display quicktags correctly
-add_action( 'admin_print_styles', 'taxonomy_tinycme_admin_head' );
-function taxonomy_tinycme_admin_head() { ?>
-	<style type="text/css">
-		.quicktags-toolbar input{width: 55px !important;}
-	</style> <?php
+
+/**
+ * Module Name: WooDojo - HTML Term Description
+ * Module Description: The WooDojo HTML term description feature adds the ability to use html in term descriptions, as well as a visual editor to make input easier.
+ * Module Version: 1.0.2
+ *
+ * @package WooDojo
+ * @subpackage Downloadable
+ * @author WooThemes
+ * @since 1.0.0
+ */
+
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+
+
+function tt_init_component_loaders(){
+	/* Include Class */
+	require_once( 'classes/class-woodojo-html-term-description.php' );
+
+	/* Instantiate Class */
+	if ( class_exists( 'TT_WooDojo_HTML_Term_Description' ) ) {	
+		$woodojo_html_term_description = new TT_WooDojo_HTML_Term_Description();
+	}
 }
+add_action( 'plugins_loaded', 'tt_init_component_loaders' );
 
-/*
- * Start replacing the description textarea on the edit detail page of a taxonomy (custom or 'category').
- * */
-
-$show_description_column = TRUE;
-
-add_filter('edit_tag_form_fields', 'taxonomy_tinycme_add_wp_editor_term');
-add_filter('edit_category_form_fields', 'taxonomy_tinycme_add_wp_editor_term');
-function taxonomy_tinycme_add_wp_editor_term($tag) { ?>
-	<tr class="form-field">
-		<th scope="row" valign="top"><label for="description"><?php _ex('Description', 'Taxonomy Description'); ?></label></th>
-		<td>
-			<?php  
-				$settings = array(
-					'wpautop' => true, 
-					'media_buttons' => true, 
-					'quicktags' => true, 
-					'textarea_rows' => '15', 
-					'textarea_name' => 'description' 
-				);	
-				wp_editor(html_entity_decode($tag->description ), 'description2', $settings); ?>	
-		</td>	
-	</tr> <?php
-}
-
-/*
- * Remove the default textarea from the edit detail page.
- * */
-add_action('admin_head', 'taxonomy_tinycme_hide_description'); 
-function taxonomy_tinycme_hide_description() {
-	global $pagenow;
-	//only hide on detail not yet on overview page.
-	if( ($pagenow == 'edit-tags.php' && isset($_GET['action']) )) : 	
-	?>
-		<script type="text/javascript">
-			jQuery(function($) {
-				$('#description, textarea#tag-description').closest('.form-field').hide(); 
-	 		}); 
- 		</script>
- 	<?php 
-	endif; 
-}
-
-// lets hide the cat description from the category admin page if $show_description_column = FALSE
-function manage_my_taxonomy_columns($columns)
-{
-	global $show_description_column;
-	 // only edit the columns on the current taxonomy, this should be a setting.
-	if ( $show_description_column)
-	 	return $columns;
-
-	// unset the description columns
-	if ( $posts = $columns['description'] ){ unset($columns['description']); }
-	 
-	return $columns;
-}
-add_filter('manage_edit-post_tag_columns','manage_my_taxonomy_columns');
-add_filter('manage_edit-category_columns','manage_my_taxonomy_columns');
